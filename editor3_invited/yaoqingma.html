@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>新版工具邀请验证</title>
+
+    <style>
+        *{padding: 0;margin: 0;}
+
+        .outerbox {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: -webkit-linear-gradient(left top, #FFFFFF , #ffeac3); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(bottom right,#FFFFFF , #ffeac3); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(bottom right, #FFFFFF , #ffeac3); /* Firefox 3.6 - 15 */
+            background: linear-gradient(to bottom right,  #FFFFFF , #ffeac3); /* 标准的语法 */
+        }
+        .innerbox {
+            position: absolute;
+            width: 660px;
+            height: 500px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            padding: 70px 73px;
+            box-sizing: border-box;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px 0 rgba(223, 156, 27, 0.20);
+            background: #fff;
+        }
+        .innerbox h1 {
+            font-size: 36px;
+            line-height: 36px;
+            color: #ffbd3b;
+            width: 100%;
+            text-align: center;
+            font-weight: 500;
+        }
+        .innerbox h2 {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #ffbd3b;
+            width: 100%;
+            text-align: center;
+            line-height: 16px;
+            font-weight: 500;
+        }
+        .vidio-link {
+            display: block;
+            width: 72px;
+            text-align: center;
+            margin: 36px auto 18px;
+            text-decoration: none;
+        }
+        .vidio-link .icon {
+            display: block;
+            width: 72px;
+            height: 72px;
+                background: url("img/icon.svg") no-repeat 0 0;
+        }
+        .vidio-link .text {
+            display: block;
+            color: #ffbd3b;
+            font-size: 12px;
+            margin-top: 6px;
+        }
+        .tips {
+            color: #ffbd3b;
+            font-size: 14px;
+            line-height: 14px;
+            margin-bottom: 8px;
+        }
+        .code_invited {
+            display: block;
+            width: 100%;
+        }
+        .code_invited input[type="text"]{
+            width: 120px;
+            height: 38px;
+            background: #fff1d5;
+            border: 1px solid #ffdc97;
+            border-radius: 4px;
+            margin-right: 8px;
+            color: #ffa800;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 4px;
+            outline: none;
+        }
+        .code_invited .op {
+            width: 100%;
+            height: 40px;
+            border-radius: 4px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            background: #ffbd3b;
+            margin-top: 30px;
+            outline：none;
+        }
+        .code_invited .op:hover {
+            background: #ffca64;
+        }
+        .code_invited .op:active {
+            background: #e99a00;
+        }
+        .getCode {
+            float: right;
+            text-decoration: none;
+            color: #ffbd3b;
+            font-size: 14px;
+            line-height: 14px;
+            margin-top: 8px;
+        }
+        .logo-icon {
+            position: absolute;
+            left: 8px;
+            bottom: 6px;
+            display: block;
+            width: 80px;
+            height: 24px;
+            background: url("img/icon.svg") no-repeat -80px 0;
+        }
+        .err {
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #ff6060;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="outerbox">
+    <div class="innerbox">
+        <h1>iH5新工具内测启动</h1>
+        <h2>你，可能就是那个参与内测的幸运儿</h2>
+        <a class="vidio-link" href="http://www.ih5.cn/teach/video/2159783"><span class="icon"></span><span class="text">视频了解</span></a>
+        <p class="tips">请输入16位邀请码</p>
+        <form id="code_invited" class="code_invited" onsubmit="return false;" action="" method="post" accept-charset="UTF-8">
+            <input name="code[0]" type="text" onkeypress="keyPress()"><input name="code[1]" type="text" onkeypress="keyPress()"><input name="code[2]" type="text" onkeypress="keyPress()"><input name="code[3]" type="text" style="margin-right: 0" onkeypress="keyPress()">
+            <input class="op" type="submit" value="接收邀请" name="op">
+        </form>
+        <a class="getCode" href="http://www.ih5.cn/teach/video/2159783">没邀请码？点我，送你呀！</a>
+        <div class="err"></div>
+        <span class="logo-icon"></span>
+    </div>
+</div>
+
+
+<script type='text/javascript' src="js/jquery-2.1.1.min.js"></script>
+<script type='text/javascript' src="js/jquery.validate.min.js"></script>
+<script type='text/javascript'>
+    $(document).ready(function(){
+        onload = function(){
+            var txts = document.getElementsByTagName("input");
+            for(var i = 0; i < txts.length;i++){
+                var t = txts[i];
+                t.index = i;
+                t.setAttribute("readonly", true);
+                t.onkeyup=function(){
+                    this.value=this.value.substr(0,4);
+                    if(this.value.length>3){
+                        var next = this.index + 1;
+                        if(next > txts.length - 1) return;
+                        txts[next].removeAttribute("readonly");
+                        txts[next].focus();
+                    }
+                }
+            }
+            txts[0].removeAttribute("readonly");
+        };
+
+        $("#code_invited").validate(
+            {
+                rules: {
+                },
+                messages: {
+                },
+
+                submitHandler: function(form) {  //通过之后回调
+                    var param = $("#code_invited").serialize();
+                    var code=$('input[name="code[0]"]').val()+$('input[name="code[1]"]').val()+$('input[name="code[2]"]').val()+$('input[name="code[3]"]').val();
+                    if(code.length<16){
+                        $('.err').html('请输入16位邀请码');
+                        return;
+                    }
+                    $.ajax({
+                        url : "/app/user/editor3Invited",
+                        type : "post",
+                        dataType : "json",
+                        data: { "code": code },
+                        success : function(result) {
+                            var vjson = eval(result);
+                            if(vjson.status_code==200) {
+                                $('.err').html('验证成功');
+                                window.location.href = "/editor3/"
+                            }
+                            else {
+                                $('.err').html(vjson.error);
+                            }
+
+                        }
+                    });
+                }
+            });
+    });
+    function keyPress() {
+        var keyCode = event.keyCode;
+        if ((keyCode >= 48 && keyCode <= 57))
+        {
+            event.returnValue = true;
+        } else {
+            event.returnValue = false;
+        }
+    }
+</script>
+</body>
+</html>
