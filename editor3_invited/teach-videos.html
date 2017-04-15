@@ -44,43 +44,41 @@
 <div id="container">
     <div class="teach-videos">
         <header class="header">
-            <div class="flex-item">
+            <div class="both-sides left">
                 <a class="logo" href="if($user['user_type']==1 || $user['user_type']==3 || $user['user_type']==4)">
                     <img src="img/logo.svg">
                 </a>
             </div>
-            <div class="flex-item">
-                <nav class="middle">
-                    <a class="main-nav" href="/general-user/work-show">
-                        <span>作品展示</span>
-                    </a>
-                    <a class="main-nav" href="/general-user/creative-templates/template">
-                        <span>模板素材</span>
-                    </a>
-                    <a class="main-nav active" href="/teach/videos">
-                        <span>视频教学</span>
-                    </a>
-                    <a class="main-nav" href="/general-user/training-activities">
-                        <span>iH5学院</span>
-                    </a>
-                    <a class="main-nav" href="/general-user/paid-service">
-                        <span>付费服务</span>
-                    </a>
-                    <a class="main-nav" href="/general-user/help-center">
-                        <span>帮助中心</span>
-                    </a>
-                </nav>
-            </div>
-            <div class="flex-item">
+            <nav class="middle">
+                <a class="main-nav" href="/general-user/work-show">
+                    <span>作品展示</span>
+                </a>
+                <a class="main-nav" href="/general-user/creative-templates/template">
+                    <span>模板素材</span>
+                </a>
+                <a class="main-nav active" href="/teach/videos">
+                    <span>视频教学</span>
+                </a>
+                <a class="main-nav" href="/general-user/training-activities">
+                    <span>iH5学院</span>
+                </a>
+                <a class="main-nav" href="/general-user/paid-service">
+                    <span>付费服务</span>
+                </a>
+                <a class="main-nav" href="/general-user/help-center">
+                    <span>帮助中心</span>
+                </a>
+            </nav>
+            <div class="both-sides">
                 <nav class="submenu">
-                    <div class="my-platform">
-                        <a href="/general-worktable">我的工作台</a>
-                    </div>
                     <div class="personal">
                         <div class="head-portrait">
-                            <img src="http://img3.imgtn.bdimg.com/it/u=2324580144,3531001861&fm=23&gp=0.jpg">
+                            <img src="img/avatar.jpg">
                         </div>
                         <!--<div class="prompt"></div>-->
+                    </div>
+                    <div class="my-platform">
+                        <a href="/general-worktable">我的工作台</a>
                     </div>
                 </nav>
             </div>
@@ -97,11 +95,11 @@
             <div class="outer-box">
                 <div class="left-bar">
                     <div class="video-type">
-                        <a class="type-link active" href="/general-user/training-activities">
-                            <span>新工具视频</span>
+                        <a class="type-link new-videos" >
+                            <span class="active">新工具视频</span>
                         </a>
-                        <a class="type-link" href="/general-user/training-activities">
-                            <span>旧工具视频</span>
+                        <a class="type-link old-videos" >
+                            <span >旧工具视频</span>
                         </a>
                     </div>
                     <div class="search-box">
@@ -111,9 +109,10 @@
                              <span class="search-icon"></span>
                          </form>
                     </div>
-                    <div class="list-content">
+                    <!-- 新视频列表 -->
+                    <div class="list-content new-list">
                         <ul class="nav-lever1 active">
-                            <h1>初始篇</h1>
+                            <h1>新视频列表</h1>
                             <li>
                                 <ul class="nav-lever2 active">
                                     <h2>快速入门</h2>
@@ -155,11 +154,90 @@
                             </li>
                         </ul>
                     </div>
+                    <!-- end -->
+                   <!-- 旧视频列表 -->
+                    <div class="list-content old-list">
+                        <ul class="nav-lever1 active">
+                            <h1>旧视频列表</h1>
+                            <li>
+                                <ul class="nav-lever2 active">
+                                    <h2>快速入门</h2>
+                                    <li>
+                                        <a href="">入门视频1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">高级视频1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">入门视频1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">入门视频1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">高级视频1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">入门视频1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">入门视频1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">高级视频1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">入门视频1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">入门视频1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">高级视频1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">入门视频1</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav-lever1 active">
+                            <h1>中级篇</h1>
+                            <li>
+                                <ul class="nav-lever2 active">
+                                    <h2>快速入门</h2>
+                                    <li>
+                                        <a href="">入门视频1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">入门视频1</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav-lever1 active">
+                            <h1>高级篇</h1>
+                            <li>
+                                <ul class="nav-lever2 active">
+                                    <h2>快速入门</h2>
+                                    <li>
+                                        <a href="">入门视频1</a>
+                                    </li>
+                                    <li>
+                                        <a href="">入门视频1</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                 <!-- end    -->
                 </div>
                 <div class="video-box">
                     <h1 class="video-name">动画制作入门</h1>
                     <div class="inner-box">
-                        <video id="my-video" class="video-js" controls preload="auto"
+                         <!-- 这张图片只是为了固定视频高宽比例！ -->
+                        <img class="video-bg" src="img/video-bg.png">
+                        <video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto"
                                poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
                             <source src="http://file.ih5.cn/learning/template/intro.mp4" type="video/mp4">
                             <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
@@ -169,6 +247,15 @@
                                 <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
                             </p>
                         </video>
+                        <div class="practiceDownload">
+                                <div class="downloadCase">
+                                    <div class="case-header"><span class="tips">提示</span><span class="close"></span></div>
+                                    <span class="icon"></span>
+                                    <p>练习案例已经下载到您的工作台了</p>
+                                    <p>马上跳转至工具练习</p>
+                                    <a class="tool-link" href="#">前往工具<span class="link-icon"></span></a>
+                                </div>
+                        </div>
                     </div>
                     <div class="operation">
                         <span class="watchOnPhone">手机观看
@@ -182,58 +269,76 @@
                         <p>iH5在线编辑工具界面概览iH5在线编辑工具界面概览iH5在线编辑工具界面概览iH5在线编辑工具界面概览</p>
                     </div>
                     <div class="poster-img">
-                        <img src="">
+                        <div class="intro-qrcode-box">
+                            <div class="intro-qrcode">
+                                <img src="img/H5-01.jpg">
+                                <p>H5充电站</p>
+                            </div>
+                            <div class="intro-qrcode">
+                                <img src="img/iH5-school.jpg">
+                                <p>iH5学堂</p>
+                            </div>
+                        </div>
+                        <div class="intro-text-box">
+                            <div class="intro-text">
+                                <p>这里</p>
+                                <p>你可以学习最热的H5案例</p>
+                                <p>你可以报名最新课程独立制作H5</p>
+                                <p>你还可以咨询任何你不懂的H5问题</p>
+                                <span class="line"></span>
+                                <h1>iH5学院</h1>
+                                <h1>学习H5， 从零到精通。</h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--<div class="sidebar-right-layer animated hidden">-->
-            <!--<aside class="header_sidebar-right">-->
-                <!--<div class="info">-->
-                    <!--<div class="head-protrait">-->
-                        <!--<img src="/static/images/public/default-avatar.png">-->
-                    <!--</div>-->
-                    <!--<div class="name">Alickchen</div>-->
-                    <!--<span class="brief"></span>-->
-                <!--</div>-->
-                <!--<div class="features">-->
-                    <!--<ul>-->
-                        <!--<li>-->
-                            <!--<a href="/general-worktable/news">-->
-                                <!--<div class="list1">-->
-                                    <!--<span></span>-->
-                                <!--</div>-->
-                                <!--我的消息-->
-                            <!--</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="/general-worktable/account">-->
-                                <!--<div class="list2"></div>-->
-                                <!--账号管理-->
-                            <!--</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="/general-worktable/table/love">-->
-                                <!--<div class="list3"></div>-->
-                                <!--我的收藏-->
-                            <!--</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a href="/general-worktable/site">-->
-                                <!--<div class="list4"></div>-->
-                                <!--设置中心-->
-                            <!--</a>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<a id="logout" href="javascript:void(0);">-->
-                                <!--<div class="list5"></div>-->
-                                <!--退出登录-->
-                            <!--</a>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-            <!--</aside>-->
-        <!--</div>-->
+        <div class="sidebar-right-layer">
+            <aside class="header_sidebar-right">
+                <div class="info">
+                    <div class="head-protrait">
+                        <img src="img/avatar.jpg">
+                    </div>
+                    <div class="name">Alickchen</div>
+                    <span class="brief">我就是我，是不一样的炮竹。</span>
+                </div>
+                <div class="features">
+                    <ul>
+                        <li>
+                            <a href="/general-worktable/news">
+                                <span class="features-icon"></span>
+                                我的消息
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/general-worktable/account">
+                            <span class="features-icon"></span>
+                                账号管理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/general-worktable/table/love">
+                            <span class="features-icon"></span>
+                                我的收藏
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/general-worktable/site">
+                            <span class="features-icon"></span>
+                                设置中心
+                            </a>
+                        </li>
+                        <li>
+                            <a id="logout" href="javascript:void(0);">
+                                <span class="features-icon"></span>
+                                退出登录
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
     </div>
 </div>
 <!--[if lte IE 9]>
@@ -258,9 +363,6 @@
     </div>
 </div>
 <![endif]-->
-<br/>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<img src="yuantu.png" width="1500" >
 <script src="js/video.min.js"></script>
 <script type='text/javascript' src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
@@ -268,11 +370,38 @@
         var myPlayer = videojs('my-video');
         videojs("my-video").ready(function(){
             var myPlayer = this;
-//            myPlayer.play();
+             myPlayer.play();
         });
+        $('.video-type .type-link').click(function(e) {
+             e.preventDefault();
+            $('.video-type .type-link span').removeClass('active');
+            $(this).find('span').addClass('active');
+            if($(this).hasClass('new-videos')) {
+                $('.old-list').hide();
+                $('.new-list').show();
+            }else {
+                $('.new-list').hide();
+                $('.old-list').show();
+            }
+        });
+
         $(".nav-lever1 > h1").click(function () {
             $(this).parent().toggleClass('active');
         });
+        $(".nav-lever2 > h2").click(function () {
+            $(this).parent().toggleClass('active');
+        });
+        $(".header .personal").click(function() {
+            $(".sidebar-right-layer").toggleClass('active');
+        });
+        $('#practice').click(function(){
+            myPlayer.pause();
+             $('.practiceDownload').fadeIn();
+        });
+        $('.practiceDownload .close').click(function() {
+             $('.practiceDownload').fadeOut();
+             myPlayer.play();
+        })
     });
 
 </script>
